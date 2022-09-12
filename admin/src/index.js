@@ -20,7 +20,7 @@ const routes = require("./routes/api.js");
 app.use(routes);
 
 app.listen(PORT,(error) => {
-  console.log(`pizza-house-admin-service, is listening on port ${PORT}`);
+  console.log(`🍕pizza-house-admin-service, is listening on port ${PORT}`);
 
   if(error){
     console.log(error);
