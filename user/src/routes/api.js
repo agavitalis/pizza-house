@@ -9,6 +9,6 @@ router.route("/product/:productId")
     .get(c.getProduct)
     
 router.route("/order")
-    .get(c.createOrder)
+    .get(c.createOrder);
   
 module.exports = router;
