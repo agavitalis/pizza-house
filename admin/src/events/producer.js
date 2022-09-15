@@ -1,6 +1,8 @@
 import { kafka } from "./kafka"
 
-const producer = kafka.producer()
+const producer = kafka.producer({
+  allowAutoTopicCreation: true,
+})
 
 export const emitToKafka = async (topic, message) => {
 

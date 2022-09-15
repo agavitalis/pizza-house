@@ -12,4 +12,5 @@ export const kafka = new Kafka({
     username: process.env.KAFKA_API_USERNAME,
     password: process.env.KAFKA_API_KEY,
   },
+  KAFKAJS_NO_PARTITIONER_WARNING:1
 })
