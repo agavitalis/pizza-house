@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from 'dotenv';
+import { listenToKafka } from "./events/index.js";
 dotenv.config();
 
 const app = express();
@@ -21,6 +22,7 @@ app.use('/api/v1/',routes);
 
 app.listen(PORT,(error) => {
   console.log(`🍕pizza-house-admin-service, is listening on port ${PORT}`);
+  listenToKafka("orderCreated");
 
   if(error){
     console.log(error);
