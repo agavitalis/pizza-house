@@ -1,7 +1,9 @@
 import { Product } from "../models/index.js";
+import { emitToKafka } from "../events/index.js";
 
 export async function createProduct(req, res) {
     let product = await Product.create(req.body)
+    await emitToKafka("productCreated", JSON.stringify(product))
     res.status(201).json(product)
 }
 

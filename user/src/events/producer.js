@@ -2,14 +2,14 @@ import { kafka } from "./kafka"
 
 const producer = kafka.producer()
 
-export const startKafkaProducer = async () => {
+export const emitToKafka = async (topic, message) => {
 
   await producer.connect()
   await producer.send({
-    topic: 'test-topic',
-    messages: [
-      { value: 'Hello KafkaJS user!' },
-    ],
+    topic: topic,
+    messages: [{
+      value: message,
+    }],
   })
 
 }

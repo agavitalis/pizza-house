@@ -17,7 +17,7 @@ mongoose.connection.on("error", console.error.bind(console, "connection error:")
 
 
 const routes = require("./routes/api.js");
-app.use(routes);
+app.use('/api/v1/',routes);
 
 app.listen(PORT,(error) => {
   console.log(`🍕pizza-house-admin-service, is listening on port ${PORT}`);
